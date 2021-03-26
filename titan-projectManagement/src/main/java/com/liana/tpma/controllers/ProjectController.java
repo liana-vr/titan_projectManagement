@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.liana.tpma.dao.EmployeeRepository;
 import com.liana.tpma.dao.ProjectRepository;
 import com.liana.tpma.entities.Employee;
 import com.liana.tpma.entities.Project;
@@ -19,6 +20,9 @@ public class ProjectController {
 	
 	@Autowired
 	ProjectRepository proRepo;
+	
+	@Autowired
+	EmployeeRepository empRepo;
 	
 	@GetMapping
 	public String displayProjects(Model model) {
@@ -31,14 +35,18 @@ public class ProjectController {
 	public String displayProjectForm(Model model) {
 		
 		Project aProject = new Project();
+		List<Employee> employees = empRepo.findAll();
 		model.addAttribute("project", aProject);
-		
+		model.addAttribute("allEmployees", employees);
+
 		return "projects/new-project";
 	}
 	
 	@PostMapping("/save")
 	public String createProject(Project project, Model model) {
 		proRepo.save(project);
-		return "redirect:/projects/new";
+		
+
+		return "redirect:/projects";
 	}
 }
