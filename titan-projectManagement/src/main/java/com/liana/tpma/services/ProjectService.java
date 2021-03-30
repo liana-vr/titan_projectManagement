@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.liana.tpma.dao.ProjectRepository;
 import com.liana.tpma.dto.ProjectStatus;
+import com.liana.tpma.dto.TimeChartData;
 import com.liana.tpma.entities.Project;
 
 
@@ -28,6 +29,11 @@ public class ProjectService {
 	
 	public List<ProjectStatus> getProjectStatus(){
 		return proRepo.getProjectStatus();
+	}
+	
+	
+	public List<TimeChartData> getTimeData(){
+		return proRepo.getTimeData();
 	}
 	
 }

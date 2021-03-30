@@ -39,7 +39,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.antMatchers("/employees/save").hasAuthority("ADMIN")
 			.antMatchers("/", "/**").permitAll()
 			.and()
+	        .authorizeRequests()
+			.and()
 			.formLogin();
+		http.csrf().disable();
 	
 	}
 }

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.liana.tpma.dto.TimeChartData;
 import com.liana.tpma.entities.Employee;
 import com.liana.tpma.entities.Project;
 import com.liana.tpma.services.EmployeeService;
@@ -53,20 +56,19 @@ public class ProjectController {
 		
 	}
 	
-//	@GetMapping("/timelines")
-//	public String displayProjectTimelines(Model model) throws JsonProcessingException {
-//		
-//		List<TimeChartData> timelineData = proService.getTimeData();
-//		
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		String jsonTimelineString = objectMapper.writeValueAsString(timelineData);
-//
-//		System.out.println("---------- project timelines ----------");
-//		System.out.println(jsonTimelineString);
-//		
-//		model.addAttribute("projectTimeList", jsonTimelineString);
-//		
-//		return "projects/project-timelines";
-//	}
+	@GetMapping("/timelines")
+	public String displayProjectTimelines(Model model) throws JsonProcessingException {
+		
+		List<TimeChartData> timelineData = proService.getTimeData();
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		String jsonTimelineString = objectMapper.writeValueAsString(timelineData);
+		
+		model.addAttribute("projectTimeList", jsonTimelineString);
+		
+		return "redirect:/projects/project-timelines";
+		
+		
+	}
 
 }

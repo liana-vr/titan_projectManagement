@@ -8,17 +8,15 @@
 	<nav th:replace="layouts :: navbar"></nav>
 	
 	<div class="container">
-		<form action="/employees/save" th:object="${employee}" method="POST">
+		<form action="/employees/update" th:object="${employee}" method="POST">
 		
 		<input type="hidden" th:field="${employee.employeeId}"/>
-		<input type="hidden" th:field="*{projects}" />
-
 		
 		<div class="form-group row">
 			<input type="text" placeholder="First Name" th:field="${employee.firstName}">
-			<span style="color:red" th:if="${#fields.hasErrors('firstName')}"
+			<!-- <span style="color:red" th:if="${#fields.hasErrors('firstName')}"
 				  th:errors="${employee.firstName}">
-			</span>
+			</span> -->
 		</div>
 	
 		<div class="form-group row">

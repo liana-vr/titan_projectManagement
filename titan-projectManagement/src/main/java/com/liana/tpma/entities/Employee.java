@@ -12,6 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.liana.tpma.validators.UniqueValue;
 
 @Entity
 public class Employee {
@@ -21,13 +26,21 @@ public class Employee {
 	@SequenceGenerator(name = "employee_seq", sequenceName = "employee_seq", allocationSize = 1)
 	private long employeeId;
 	
+	@NotBlank(message="First Name is required")
 	private String firstName;
+	
+	@NotBlank(message="Last Name is required")
 	private String lastName;
+	
+	@NotBlank(message="Email is required")
+	@Email
+	@UniqueValue
 	private String email;
 	
 	@ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
 			   fetch = FetchType.LAZY)
 	@JoinTable(name="project_employee", joinColumns=@JoinColumn(name="employee_id"), inverseJoinColumns=@JoinColumn(name="project_id"))
+	@JsonIgnore
 	private List<Project> projects;
 	
 
