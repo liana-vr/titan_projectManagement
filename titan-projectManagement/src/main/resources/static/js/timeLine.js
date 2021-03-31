@@ -1,18 +1,18 @@
-	var chartData = "[[${projectTimeList}]]"
-	var chartDataDecoded = decodeHtml(chartData);
-	var chartJsonArray = JSON.parse(chartDataDecoded)
-	var resultArray = [];
+
+var chartDataDecoded = decodeHtml(chartTimeData);
+var chartJsonArray = JSON.parse(chartDataDecoded)
+var resultArray = [];
 
 
-	for(var i in chartJsonArray){
-		resultArray.push([i, chartJsonArray[i]]);
-	}
+for(var i in chartJsonArray){
+    resultArray.push([i, chartJsonArray[i]]);
+}
 
-	google.charts.load('current', {'packages':['timeline']});
-    google.charts.setOnLoadCallback(drawChart);
-      
-  function drawChart() {
-    var container = document.getElementById("chart_div");
+google.charts.load('current', {'packages':['timeline']});
+google.charts.setOnLoadCallback(drawChart);
+    
+function drawChart() {
+    var container = document.getElementById('chart_div');
     var chart = new google.visualization.Timeline(container);
     var dataTable = new google.visualization.DataTable();
 
@@ -20,24 +20,25 @@
     dataTable.addColumn({ type: 'date', id: 'Start' });
     dataTable.addColumn({ type: 'date', id: 'End' });
 
-      for (var i = 0; i < resultArray.length; i++) {
-    	  dataTable.addRows([
-    		  			[resultArray[i][1]["projectName"], 
-    		  			 new Date(resultArray[i][1]["startDate"]),
-    		  			new Date(resultArray[i][1]["endDate"])]
-    		  ]);
-      }
-
- 
-    chart.draw(dataTable);
-
+    for (var i = 0; i < resultArray.length; i++) {
+        dataTable.addRows([
+                        [resultArray[i][1]["projectName"], 
+                        new Date(resultArray[i][1]["startDate"]),
+                        new Date(resultArray[i][1]["endDate"])]
+            ]);
+    }
     
-  }
- 
-	
+    var options = {
+      colors: ['#ffb6b9', '#fae3d9', '#bbded6'],
+      backgroundColor: '#562a63',
+      
+      timeline: {rowLabelStyle: {color: 'white'}},
+      
+    };
+    
 
-	function decodeHtml(html) {
-	    var txt = document.createElement("textarea");
-	    txt.innerHTML = html;
-	    return txt.value;
-	}
+
+    chart.draw(dataTable, options);
+
+
+}

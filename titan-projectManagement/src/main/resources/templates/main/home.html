@@ -9,59 +9,63 @@
 	<div class="container">
 		<h3>Main Dashboard</h3>
 		<a th:text="${versionNumber}"></a>
-		<hr>
-		<h4>Current Projects</h4>
+		
+		<h4 class="currentProjects">Current Projects</h4>
 		<div class="row">
 			<div class="col-md-6">
-				<table class="table table-bordered table-striped">
+				<table class="table table-bordered table-striped" style="margin-top:2em">
 					<thead class="thead-dark">
 						<tr>
-							<th>Project Name</th>
-							<th>Project Status</th>
+							<th class="firstName">Project Name</th>
+							<th class="noOfPro">Project Status</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="aProject : ${projects}">
-							<td th:text="${aProject.name}"/>
-							<td th:text="${aProject.stage}"/>
+							<td class="firstNameEntry" th:text="${aProject.name}"/>
+							<td class="noOfProEntry" th:text="${aProject.stage}"/>
 						</tr>
 					</tbody>	
 				</table>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 chart" style="padding-bottom:2em">
+				<h4 class="currentProjects" style="margin-left:2em">Project Status</h4>
 				<canvas id="myPieChart" height="50" width="50"></canvas>
 				<script>var chartData = "[[${projectStatusCount}]]"</script>
 			</div>
 		</div>
 		
-		<h4>Current Employees</h4>
+		<h4 class="currentEmployees">Current Employees</h4>
 		<div class="row">
-			<div class="col-md-6">
-			<table class="table table-bordered table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>No. Of Projects</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="aEmployeeProjectCount : ${employeesListProjectCount}">
-						<td th:text="${aEmployeeProjectCount.firstName}"/>
-						<td th:text="${aEmployeeProjectCount.lastName}"/>
-						<td th:text="${aEmployeeProjectCount.projectCount}"/>
-					</tr>
-				</tbody>	
-			</table>
-			
-		</div>
-			
+			<div class="col-md-5">
+				<table class="table table-bordered table-striped" id="lastRow" style="margin-top:2em">
+					<thead class="thead-dark">
+						<tr>
+							<th class="firstName">First Name</th>
+							<th class="lastName">Last Name</th>
+							<th class="noOfPro"style="width:30%">No. Of Projects</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aEmployeeProjectCount : ${employeesListProjectCount}">
+							<td class="firstNameEntry" th:text="${aEmployeeProjectCount.firstName}"/>
+							<td class="lastNameEntry" th:text="${aEmployeeProjectCount.lastName}"/>
+							<td class="noOfProEntry" th:text="${aEmployeeProjectCount.projectCount}"/>
+						</tr>
+					</tbody>	
+				</table>
+			</div>
+			<div class="col-md-6 timelines">
+				<h4 class="currentProjects" style="margin:2em;">Project Timelines</h4>
+				<script>var chartTimeData = "[[${projectTimeList}]]"</script>
+				<div id="chart_div"></div>
+			</div>
 		</div>
 	
 		
 	</div>
-	
 	<script type="text/javascript" th:src="@{/js/myChart.js}"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" th:src="@{/js/timeLine.js}"></script>
 </body>
 

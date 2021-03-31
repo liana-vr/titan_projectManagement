@@ -36,5 +36,15 @@ public class ProjectService {
 		return proRepo.getTimeData();
 	}
 	
+	public Project findByProjectId(long theId) {
+		// TODO Auto-generated method stub
+		return proRepo.findByProjectId(theId);
+	}
+
+
+	public void delete(Project thePro) {
+		proRepo.delete(thePro);
+		
+	}
 }
 

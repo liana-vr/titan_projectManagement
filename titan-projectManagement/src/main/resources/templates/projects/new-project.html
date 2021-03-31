@@ -7,52 +7,57 @@
 <body>
 	<nav th:replace="layouts :: navbar"></nav>
 	
-	<div class="container">
+	<div class="container projectFormContainer">
+		<h4 class="projectForm" style="margin-bottom:2em;">Create or Update Your Project</h4>
 		<form action="/projects/save" th:object="${project}" method="POST">
 		
-		<div class="form-group row">
-			<input type="text" placeholder="Project Name" th:field="*{name}">
-		</div>
-		
-		<div class="form-group row">
-			<select th:field="${project.stage}">
-				<option th:value="NOTSTARTED"> Not Started</option>
-				<option th:value="INPROGRESS"> In Progress</option>
-				<option th:value="COMPLETED"> Completed</option>
-			</select>
-		</div>
-		
-		<div class="form-group row">
-			<textarea type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
-		</div>
-		
-		<div class="form-group row">
-			<select th:field="*{employees}" multiple="multiple">
-				<option th:each = "employee : ${allEmployees}"
-						th:value = "${employee.employeeId}"
-						th:text = "${employee.firstName}">
-				</option>
-			</select>
-		</div>
-		
-		Project Start Date:
-		<div class="form-group row">
-			<input id="dp3" type="text" class="mb-4 col-2 col-xs-4" value="Start Date" th:field="${project.startDate}">
-		</div>
-		
-		
-		Project End Date:
-		<div class="form-group row">
-			<input id="dp4" type="text" class="mb-4 col-2 col-xs-4" value="End Date" th:field="${project.endDate}">
-		</div>
-		
-		<script type="text/javascript">
-	      	$('#dp3').datepicker();
-	      	$('#dp4').datepicker();
-	      </script> 
-		
-		
-		<button class="btn btn-info col-2" type="submit">Enter Project</button>
+			<div class="form-group row projectForm">
+				<input class="projectForm inputField" type="text" placeholder="Project Name" th:field="*{name}">
+			</div>
+			
+			<div class="form-group row projectForm">
+				<select th:field="${project.stage}" class="projectForm inputField">
+					<option th:value="NOTSTARTED"> Not Started</option>
+					<option th:value="INPROGRESS"> In Progress</option>
+					<option th:value="COMPLETED"> Completed</option>
+					<option th:value="ONHOLD"> On Hold</option>
+				</select>
+			</div>
+			
+			<div class="form-group row projectForm">
+				<textarea class="projectForm inputField" type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+			</div>
+			
+			<div class="form-group row projectForm">
+				Select Team Members:
+				<select th:field="*{employees}" multiple="multiple" class="projectForm inputField">
+					<option th:each = "employee : ${allEmployees}"
+							th:value = "${employee.employeeId}"
+							th:text = "${employee.firstName}">
+					</option>
+				</select>
+			</div>
+			
+			
+			<div class="form-group row projectForm">
+				Project Start Date:
+				<input id="dp3" type="text" class="projectForm inputField" value="Start Date" th:field="${project.startDate}">
+			</div>
+			
+			
+			
+			<div class="form-group row projectForm">
+				Project End Date:
+				<input id="dp4" type="text" class="projectForm inputField" value="End Date" th:field="${project.endDate}">
+			</div>
+			
+			<script type="text/javascript">
+		      	$('#dp3').datepicker();
+		      	$('#dp4').datepicker();
+		      </script> 
+			
+			
+			<button class="btn btn-info col-2" id="projectForm" type="submit">Enter Project</button>
 		
 		</form>
 	</div>

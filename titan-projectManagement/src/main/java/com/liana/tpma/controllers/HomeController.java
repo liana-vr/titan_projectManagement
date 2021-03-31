@@ -13,10 +13,15 @@ import com.liana.tpma.dao.EmployeeRepository;
 import com.liana.tpma.dao.ProjectRepository;
 import com.liana.tpma.dto.EmployeeProject;
 import com.liana.tpma.dto.ProjectStatus;
+import com.liana.tpma.dto.TimeChartData;
 import com.liana.tpma.entities.Project;
+import com.liana.tpma.services.ProjectService;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	ProjectService proService;
 	
 	@Autowired
 	ProjectRepository proRepo;
@@ -38,6 +43,13 @@ public class HomeController {
 		
 		List<EmployeeProject> employeesProjectCount = empRepo.employeeProjects();
 		model.addAttribute("employeesListProjectCount", employeesProjectCount);
+		
+		List<TimeChartData> timelineData = proRepo.getTimeData();
+		
+		ObjectMapper objectTimeMapper = new ObjectMapper();
+		String jsonTimelineString = objectTimeMapper.writeValueAsString(timelineData);
+		
+		model.addAttribute("projectTimeList", jsonTimelineString);
 		
 		return "main/home";
 	}

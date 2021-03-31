@@ -1,3 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+html{
+	height: 100%;
+	font-family: 'Manrope', sans-serif !important;
+  	color: rgba(255,255,255,0.6) !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+body{
+  font-family: 'Manrope', sans-serif !important;
+  color: white;
+  background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+	background-attachment: fixed;
+  background-image:
+  linear-gradient(150deg, rgba(3, 0, 51, 1), rgba(90, 0, 117, 1), rgba(0, 63, 60, 1)) !important;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Manrope', sans-serif !important;
+  color: rgba(255,255,255,0.6) !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+.btn, .inputField, #projectForm, .projectForm, a.nav-link.active, a.nav-link, .navbar-brand{
+	font-family: 'Manrope', sans-serif !important;
+}
+.container, .currentProjects{
+	margin-top: 3em;
+}
 .container{
+	margin-left: 300px !important;
+}
+.navbar-brand{
+	font-size: 2em !important;
+	color: rgba(255,255,255,0.6) !important;
+}
+a.nav-link.active, a.nav-link{
+	color: rgba(255,255,255,0.6) !important;
+	margin-left: -1em !important;
+}
+.bg-dark{
+	background-color: rgba(255,255,255,0.2) !important;
+	position: fixed;
+    top: 50px;
+    left: 60px;
+    width: 12%;
+    border-radius: 20px;
+}
+.currentEmployees{
 	margin-top: 2em;
 }
+
+text{
+	fill: rgba(255,255,255,0.6) !important;
+}
+table{
+	color: rgba(255,255,255,0.6) !important;
+}
+th{
+	font-size: 1em;
+	color: rgba(255,255,255,0.6) !important;
+	border-color: rgba(255,255,255,0.3) !important;
+}
+td{
+	font-size: 0.8em;
+	background-color: rgba(255,255,255,0.2) !important;
+	border-color: rgba(255,255,255,0.3) !important;
+	font-weight: 200 !important;
+}
+.table .thead-dark th {
+	background-color: rgba(255,255,255,0.2) !important;
+	font-weight: 500 !important;
+}
+
+.firstName{
+	border-radius: 20px 0px 0px 0px !important;
+}
+.noOfPro{
+	border-radius: 0px 20px 0px 0px !important;
+}
+
+table.table.table-bordered.table-striped{
+	border-radius: 20px !important;
+	border-collapse: separate;
+	border-spacing: 0em;
+}
+
+table.table.table-bordered.table-striped {
+	border: none !important;
+}
+
+ tr:nth-last-child(1) > .firstNameEntry{ 
+	border-radius: 0px 0px 0px 20px !important;
+}
+
+ tr:nth-last-child(1) > .noOfProEntry{ 
+	border-radius: 0px 0px 20px 0px !important;
+}
+
+.timelines{
+	height: 20em !important;
+	margin-left: 2em !important;
+	margin-top: 2em !important;
+	background-color: rgba(255,255,255,0.2) !important;
+	border-radius: 20px !important;
+}
+
+.chart{
+	margin-left: 2em !important;
+	margin-top: -7em !important;
+	background-color: rgba(255,255,255,0.2) !important;
+	border-radius: 20px !important;
+}
+#lastRow{
+	margin-bottom: 6em !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+.projectFormContainer{
+	background-color: rgba(255,255,255,0.2) !important;
+	border-radius: 20px !important;
+	padding: 30px;
+	width: 500px !important;
+	margin-top: 5em;
+	text-align: center;
+}
+
+.btn{
+	border-radius: 30px;
+}
+
+.btn-danger{
+	background: linear-gradient(132deg, rgba(177,0,180,1) 0%, rgba(255,182,239,1) 100%) !important;
+	border: none !important;;
+}
+.btn-info{
+	background: linear-gradient(132deg, rgba(0,65,180,1) 0%, rgba(82,229,255,1) 100%) !important;
+	border: none !important;;
+}
+.delete{
+	margin-left: 3em;
+}
+.add{
+	margin-bottom: 3em;
+	background: linear-gradient(132deg, rgba(69,0,144,1) 0%, rgba(184,71,255,1) 100%) !important;
+	border: none !important;
+	padding: 1em !important;
+}
+.projectForm{
+	width: 400px !important;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 7px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#projectForm{
+	max-width: 360px !important;
+	margin-top: 1.5em;
+}
+.inputField{
+	background-color: rgba(255,255,255,0.1) !important;
+	border: none !important;
+	color: white;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #a3a3a3;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #a3a3a3;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #a3a3a3;
+}
+
+
+

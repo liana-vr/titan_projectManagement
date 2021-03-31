@@ -10,14 +10,16 @@ for(var i=0; i < arrayLength; i++){
 	labelData[i] = chartJson[i].label;
 }
 
+Chart.defaults.global.defaultFontColor = 'white';
 new Chart(document.getElementById("myPieChart"), {
     type: 'doughnut',
     data: {
         labels: labelData,
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: ["#ffb6b9", "#fae3d9", "#bbded6"],
-            data: numericData
+            backgroundColor: ["#ffb6b9", "#fae3d9", "#bbded6", "#9ac4d6"],
+            data: numericData,
+            borderWidth: 0
         }]
     },
 
@@ -25,8 +27,9 @@ new Chart(document.getElementById("myPieChart"), {
     options: {
     	title: {
     		display: true,
-    		text: "Current Project Status"
+    		fontSize: 20
     	}
+    	
     }
 });
 
