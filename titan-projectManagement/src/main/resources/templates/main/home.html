@@ -7,17 +7,18 @@
 <body>
 	<nav th:replace="layouts :: navbar"></nav>
 	<div class="container">
-		<h3>Main Dashboard</h3>
-		<a th:text="${versionNumber}"></a>
+		<!-- <div class="col-md-4 dashboard">
+			<h4>MAIN DASHBOARD</h4>
+		</div> -->
 		
-		<h4 class="currentProjects">Current Projects</h4>
+		<h5 class="currentProjects">CURRENT PROJECTS</h5>
 		<div class="row">
 			<div class="col-md-6">
 				<table class="table table-bordered table-striped" style="margin-top:2em">
 					<thead class="thead-dark">
 						<tr>
-							<th class="firstName">Project Name</th>
-							<th class="noOfPro">Project Status</th>
+							<th class="firstName">PROJECT NAME</th>
+							<th class="noOfPro">PROJECT STATUS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -29,21 +30,21 @@
 				</table>
 			</div>
 			<div class="col-md-4 chart" style="padding-bottom:2em">
-				<h4 class="currentProjects" style="margin-left:2em">Project Status</h4>
+				<h4 class="currentProjects" style="margin-left:2em">PROJECT STATUS</h4>
 				<canvas id="myPieChart" height="50" width="50"></canvas>
 				<script>var chartData = "[[${projectStatusCount}]]"</script>
 			</div>
 		</div>
 		
-		<h4 class="currentEmployees">Current Employees</h4>
+		<h5 class="currentEmployees">CURRENT EMPLOYEES</h5>
 		<div class="row">
 			<div class="col-md-5">
 				<table class="table table-bordered table-striped" id="lastRow" style="margin-top:2em">
 					<thead class="thead-dark">
 						<tr>
-							<th class="firstName">First Name</th>
-							<th class="lastName">Last Name</th>
-							<th class="noOfPro"style="width:30%">No. Of Projects</th>
+							<th class="firstName">FIRST NAME</th>
+							<th class="lastName">LAST NAME</th>
+							<th class="noOfPro"style="width:30%">NO. PROJECTS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -56,7 +57,7 @@
 				</table>
 			</div>
 			<div class="col-md-6 timelines">
-				<h4 class="currentProjects" style="margin:2em;">Project Timelines</h4>
+				<h4 class="currentProjects" style="margin:2em;">PROJECT TIMELINES</h4>
 				<script>var chartTimeData = "[[${projectTimeList}]]"</script>
 				<div id="chart_div"></div>
 			</div>

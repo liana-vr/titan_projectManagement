@@ -9,18 +9,18 @@
 	<nav th:replace="layouts :: navbar"></nav>
 	
 	<div class="container">
-		<h3>Project Directory</h3>
+		<h5>PROJECT DIRECTORY</h5>
 		<hr>
 		
-		<a th:href="@{/projects/new}" class="btn btn-primary btn-sm add">Create Project</a>
+		<a th:href="@{/projects/new}" class="btn btn-primary btn-sm add">CREATE PROJECT</a>
 		<br/>
 
 		<table class="table table-bordered table-striped">
 			<thead class="thead-dark">
 				<tr>
-					<th class="firstName" >Project Name</th>
-					<th>Project Status</th>
-					<th class="noOfPro" style="width:20%">Edit</th>
+					<th class="firstName" >PROJECT NAME</th>
+					<th>PROJECT STATUS</th>
+					<th class="noOfPro" style="width:20%">EDIT</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,11 +28,9 @@
 					<td class="firstNameEntry" th:text="${aProject.name}"/>
 					<td th:text="${aProject.stage}"/>
 					<td class="noOfProEntry" style="width:30%">
-						<a th:href="@{/projects/update(id=${aProject.projectId})}"
-							class="btn btn-info btm-sm">Update</a>
 						<a th:href="@{/projects/delete(id=${aProject.projectId})}"
 							class="btn btn-danger btm-sm delete"
-							onClick="if (!(confirm('Are you sure you want to delete this entry?'))) return false">Delete</a>
+							onClick="if (!(confirm('Are you sure you want to delete this entry?'))) return false">DELETE</a>
 					</td>
 				</tr>
 			</tbody>	

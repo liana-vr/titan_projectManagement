@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
 html{
 	height: 100%;
-	font-family: 'Manrope', sans-serif !important;
+	font-family: 'Quicksand', sans-serif !important;
   	color: rgba(255,255,255,0.6) !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
 body{
   font-family: 'Manrope', sans-serif !important;
   color: white;
@@ -15,19 +14,17 @@ body{
     background-size: cover;
     background-repeat:no-repeat;
 	background-attachment: fixed;
-  background-image:
-  linear-gradient(150deg, rgba(3, 0, 51, 1), rgba(90, 0, 117, 1), rgba(0, 63, 60, 1)) !important;
+  background-image: linear-gradient(150deg, rgba(3, 0, 51, 1), rgba(90, 0, 117, 1), rgba(0, 63, 60, 1)) !important;
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Manrope', sans-serif !important;
+  font-family: 'Quicksand', sans-serif !important;
   color: rgba(255,255,255,0.6) !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
 .btn, .inputField, #projectForm, .projectForm, a.nav-link.active, a.nav-link, .navbar-brand{
-	font-family: 'Manrope', sans-serif !important;
+	font-family: 'Quicksand', sans-serif !important;
 }
 .container, .currentProjects{
 	margin-top: 3em;
@@ -35,13 +32,19 @@ body{
 .container{
 	margin-left: 300px !important;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 .navbar-brand{
+	font-family: 'Faster One', cursive !important;
 	font-size: 2em !important;
 	color: rgba(255,255,255,0.6) !important;
+	letter-spacing: 0.3em !important;
+	margin-left: -0.3em !important;
 }
 a.nav-link.active, a.nav-link{
 	color: rgba(255,255,255,0.6) !important;
 	margin-left: -1em !important;
+	font-family: 'Quicksand', sans-serif !important;
 }
 .bg-dark{
 	background-color: rgba(255,255,255,0.2) !important;
@@ -52,29 +55,31 @@ a.nav-link.active, a.nav-link{
     border-radius: 20px;
 }
 .currentEmployees{
-	margin-top: 2em;
+	margin-top: -2em;
 }
 
 text{
 	fill: rgba(255,255,255,0.6) !important;
+	font-weight: 200 !important;
+	font-family: 'Quicksand', sans-serif !important;
 }
 table{
 	color: rgba(255,255,255,0.6) !important;
 }
 th{
-	font-size: 1em;
+	font-size: 0.9em;
 	color: rgba(255,255,255,0.6) !important;
 	border-color: rgba(255,255,255,0.3) !important;
 }
 td{
-	font-size: 0.8em;
+	font-size: 0.85em;
 	background-color: rgba(255,255,255,0.2) !important;
 	border-color: rgba(255,255,255,0.3) !important;
 	font-weight: 200 !important;
 }
 .table .thead-dark th {
 	background-color: rgba(255,255,255,0.2) !important;
-	font-weight: 500 !important;
+	font-weight: 600 !important;
 }
 
 .firstName{
@@ -109,23 +114,31 @@ table.table.table-bordered.table-striped {
 	background-color: rgba(255,255,255,0.2) !important;
 	border-radius: 20px !important;
 }
-
+.dashboard{
+	background-color: rgba(255,255,255,0.2) !important;
+	border-radius: 20px !important;
+	padding: 20px;
+	padding-top: 30px;
+	text-align: center !important;
+	vertical-align: center !important;
+}
 .chart{
-	margin-left: 2em !important;
-	margin-top: -7em !important;
+	margin-left: 8em !important;
+	margin-top: 1.8em !important;
 	background-color: rgba(255,255,255,0.2) !important;
 	border-radius: 20px !important;
 }
 #lastRow{
 	margin-bottom: 6em !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
 .projectFormContainer{
 	background-color: rgba(255,255,255,0.2) !important;
 	border-radius: 20px !important;
 	padding: 30px;
 	width: 500px !important;
-	margin-top: 5em;
+	margin-top: 4em;
+	margin-left: auto !important;
+	margin-right: auto !important;
 	text-align: center;
 }
 
@@ -134,21 +147,24 @@ table.table.table-bordered.table-striped {
 }
 
 .btn-danger{
-	background: linear-gradient(132deg, rgba(177,0,180,1) 0%, rgba(255,182,239,1) 100%) !important;
+	background: linear-gradient(132deg, rgba(127,0,177,0.5) 0%, rgba(200,0,105,0.5) 100%);
+	color: rgba(255,255,255,0.6) !important;
 	border: none !important;;
 }
 .btn-info{
-	background: linear-gradient(132deg, rgba(0,65,180,1) 0%, rgba(82,229,255,1) 100%) !important;
+	background: linear-gradient(132deg, rgba(0,10,177,0.5) 0%, rgba(150,0,176,0.5) 100%) !important;
+	color: rgba(255,255,255,0.6) !important;
+	margin-right: 2em !important;
 	border: none !important;;
 }
-.delete{
-	margin-left: 3em;
-}
+
 .add{
 	margin-bottom: 3em;
-	background: linear-gradient(132deg, rgba(69,0,144,1) 0%, rgba(184,71,255,1) 100%) !important;
+	background: linear-gradient(132deg, rgba(224,0,200,0.5) 0%, rgba(124,0,255,0.5) 100%) !important;
 	border: none !important;
-	padding: 1em !important;
+	padding: 0.5em 1.2em !important;
+	color: rgba(255,255,255,0.6) !important;
+	font-size: 1.1em;
 }
 .projectForm{
 	width: 400px !important;
@@ -165,20 +181,19 @@ table.table.table-bordered.table-striped {
 .inputField{
 	background-color: rgba(255,255,255,0.1) !important;
 	border: none !important;
-	color: white;
+	color: rgba(255,255,255,0.6) !important;;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #a3a3a3;
+div[class^='ui'], div[class*=' ui'], a[class^='ui'], a[class*=' ui'], td[class^='ui'], td[class*=' ui'], span.ui-icon.ui-icon-circle-triangle-w, 
+span.ui-icon.ui-icon-circle-triangle-e{
+	background-color: rgba(255,255,255,0.2) !important;
+	border-radius: 20px !important;
+	color: rgba(255,255,255,0.6) !important;
+	font-family: 'Quicksand', sans-serif !important;
+	border: none !important;
 }
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #a3a3a3;
+div#ui-datepicker-div{
+	background-image: linear-gradient(132deg, rgba(64,39,129,1) 0%, rgba(149,0,150,1) 100%) !important;
 }
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: #a3a3a3;
-}
-
 
 

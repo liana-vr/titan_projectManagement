@@ -29,7 +29,7 @@ function drawChart() {
     }
     
     var options = {
-      colors: ['#ffb6b9', '#fae3d9', '#bbded6'],
+      colors: ["#db009f", "#9600d1", "#0079e0", "#00adab"],
       backgroundColor: '#562a63',
       
       timeline: {rowLabelStyle: {color: 'white'}},
