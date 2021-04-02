@@ -16,7 +16,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.liana.tpma.validators.UniqueValue;
 
 @Entity
 public class Employee {
@@ -34,7 +33,6 @@ public class Employee {
 	
 	@NotBlank(message="Email is required")
 	@Email
-	@UniqueValue
 	private String email;
 	
 	@ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},

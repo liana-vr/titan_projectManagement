@@ -55,7 +55,7 @@ a.nav-link.active, a.nav-link{
     border-radius: 20px;
 }
 .currentEmployees{
-	margin-top: -2em;
+	margin-top: 2em;
 }
 
 text{
@@ -108,7 +108,7 @@ table.table.table-bordered.table-striped {
 }
 
 .timelines{
-	height: 20em !important;
+	height: 468px !important;
 	margin-left: 2em !important;
 	margin-top: 2em !important;
 	background-color: rgba(255,255,255,0.2) !important;
@@ -195,5 +195,6 @@ span.ui-icon.ui-icon-circle-triangle-e{
 div#ui-datepicker-div{
 	background-image: linear-gradient(132deg, rgba(64,39,129,1) 0%, rgba(149,0,150,1) 100%) !important;
 }
+
 
 

@@ -26,8 +26,13 @@ public class Project {
 	@SequenceGenerator(name = "project_seq", sequenceName = "project_seq", allocationSize = 1)
 	private long projectId;
 	
+	@NotBlank(message="Prject Name is required")
 	private String name;
+	
+	@NotBlank(message="this Field is required")
 	private String Stage;
+	
+	@NotBlank(message="Project Description is required")
 	private String description;
 	
 	@NotBlank(message="date cannot be empty")

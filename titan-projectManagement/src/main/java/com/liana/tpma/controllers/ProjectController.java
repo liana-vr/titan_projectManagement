@@ -78,7 +78,7 @@ public class ProjectController {
 		
 		model.addAttribute("project", thePro);
 		
-		return "projects/new-project";
+		return "projects/update-project";
 	}
 	
 	@GetMapping("delete")
