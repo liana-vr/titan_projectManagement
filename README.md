@@ -1,4 +1,4 @@
-# titan_projectManagement
+# Titan
 
 Titan is a project management tool designed to track and manage projects and team members. 
                         This web application allows users to view lists of all current projects and employees
